@@ -1,6 +1,6 @@
 ## Experiments on more baselines
 
-We add BGRL, MASKGAE, AFGRL and COSTA as baseline and report their performance. In node classification we use public split for Cora/CiteSeer and PubMed, and 10/10/80 train/valid/test split for other datasets. Also, we train the previous "OOM" result in batched manner to show the performance.
+We add BGRL, MASKGAE, AFGRL and COSTA as baseline and report their performance. Also, we train the previous "OOM" result in batched manner to show the performance.
 
 ### Experiments on clustering
 
@@ -23,20 +23,24 @@ We add BGRL, MASKGAE, AFGRL and COSTA as baseline and report their performance. 
 
 | node      | Cora  | CiteSeer | PubMed | Photo | Computer | CS    | Physics | Mean   |
 |-----------|-------|----------|--------|-------|----------|-------|---------|--------|
-| BGRL      | 82.7  | 71.13    | 79.67  | 93.17 | __90.34__    | 93.31 | 95.73   | 86.58  |
-| MaskGAE   | 84.3  | __73.8__     | 80.58  | 93.31 | 89.54    | 93.28 | 95.77   | 87.23  |
-| AFGRL     | 83.27 | 71.35    | 79.64  | 93.22 | 89.88    | 93.27 | 95.69   | 86.62  |
-| COSTA     | 84.25 | 72.47    | 80.47  | 92.56 | 88.32    | 92.95 | 95.74   | 86.68  |
-| GRACE     | 81.92 | 71.23    | 80.62  | 92.15 | 86.25    | 92.93 | 95.26   | 85.77  |
-| DGI       | 82.3  | 71.8     | 76.8   | 91.61 | 83.95    | 92.15 | 94.51   | 84.73  |
-| CCA-SSG   | 84    | 73.1     | 81     | 93.14 | 88.74    | 93.31 | 95.38   | 86.95  |
-| MVGRL     | 83.5  | 73.3     | 80.1   | 91.74 | 87.52    | 92.11 | 95.33   | 86.23  |
-| GraphMAE  | 84.2  | 73.4     | 81.1   | 92.98 | 88.34    | 93.08 | 95.3    | 86.91  |
-| SeeGera   | 84.3  | 73       | 80.4   | 92.81 | 88.39    | 93.84 | 95.39   | 86.88  |
+| BRGL      | 84.27 | 73.04    | 84.47  | 92.89 | 89.72    | 93.97 | 95.64   | 87.71  |
+| MaskGAE   | 84.52 | __73.32__    | 85.26  | 92.74 | 89.41    | 93.46 | 95.82   | 87.79  |
+| AFGRL     | 84.46 | 72.45    | 84.92  | 93.14 | __89.74__    | 93.16 | 95.32   | 87.60  |
+| COSTA     | 84.73 | 72.05    | 84.31  | 92.17 | 88.41    | 92.73 | 95.41   | 87.12  |
+| GRACE     | 84.08 | 71.76    | 86.03  | 77.79 | 77.98    | 89.65 | 94.82   | 83.16  |
+| DGI       | 83.86 | 70.25    | 86.05  | 92.21 | 88.03    | 90.36 | 94.71   | 86.50  |
+| CCA-SSG   | 83.71 | 70.45    | __86.07__  | 92.76 | 79.26    | 93.18 | 95.7    | 85.88  |
+| MVGRL     | 83.5  | 72.3     | 80.1   | 91.74 | 87.52    | 92.11 | 95.28   | 86.08  |
+| GraphMAE  | 84.46 | 72.81    | 85.8   | 88.81 | 81.87    | 92.69 | 95.53   | 86.00  |
+| SeeGera   | 84.34 | 71.72    | 85.68  | 92.33 | 88.27    | 93.79 | 95.79   | 87.42  |
+| GCLFormer | __84.74__ | 72.97    | 85.32  | __93.71__ | 87.47    | __94.87__ | __95.98__   | __87.87__  |
 
 
 
 ### Experiments on link prediction, the ROC is reported
+
+The result of CAN is omited because CAN takes the feature of nodes as sparse matrix with only "0" and "1", so it fails on some datasets like PubMed.
+
 | ROC       | Cora  | CiteSeer | PubMed | Photo | Computer | CS    | Physics | Mean   |
 |-----------|-------|----------|--------|-------|----------|-------|---------|--------|
 | BGRL      | 95.23 | 94.71    | 97.02  | 95.57 | 96.42    | 95.06 | 92.02   | 95.15  |
@@ -56,6 +60,9 @@ We add BGRL, MASKGAE, AFGRL and COSTA as baseline and report their performance. 
 
 
 ### Experiments on link prediction, the AP is reported
+
+The result of CAN is omited because CAN takes the feature of nodes as sparse matrix with only "0" and "1", so it fails on some datasets like PubMed.
+
 | AP        | Cora  | CiteSeer | PubMed | Photo | Computer | CS    | Physics | Mean   |
 |-----------|-------|----------|--------|-------|----------|-------|---------|--------|
 | BGRL      | 92.15 | 90.24    | 94.61  | 92.56 | 95.06    | 91.53 | 89.47   | 92.23  |
