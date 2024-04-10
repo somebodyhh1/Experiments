@@ -33,7 +33,7 @@ We add BGRL, MASKGAE, AFGRL and COSTA as baseline and report their performance. 
 | MVGRL     | 83.5  | 73.3     | 80.1   | 91.74 | 87.52    | 92.11 | 95.33   | 86.23  |
 | GraphMAE  | 84.2  | 73.4     | 81.1   | 92.98 | 88.34    | 93.08 | 95.3    | 86.91  |
 | SeeGera   | 84.3  | 73       | 80.4   | 92.81 | 88.39    | 93.84 | 95.39   | 86.88  |
-| GCLFormer | __84.3__  | 73.5     | __81.4__   | __93.85__ | 88.67    | __94.85__ | __96.14__   | __87.53__  |
+
 
 
 ### Experiments on link prediction, the ROC is reported
@@ -73,4 +73,3 @@ We add BGRL, MASKGAE, AFGRL and COSTA as baseline and report their performance. 
 | GCLFormer | __97.14__ | __97.19__    | 89.27  | 90.52 | 95.97    | __98.07__ | __99.4__    | __95.37__  |
 
 In general, Contrastive based methods are more good at node level task and generative based methods excels at link prediction tasks because generative based methods try to reconstruct the topology while contrastive learning focus on the similarity between positive samples. But GCLFormer utalize the attention calculation, so to some extent, we also try to reconstruct the topology, so GCLFormer also performs well on link prediction tasks.
-
